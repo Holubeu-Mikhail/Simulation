@@ -12,6 +12,16 @@ public class Predator extends Creature {
 
     @Override
     public void makeMove(List<Entity> entities) {
+        Herbivore target = (Herbivore) getClosest(entities, Herbivore.class);
 
+        if (target != null) {
+            if (this.position.getDistanceTo(target.getPosition()) <= 1) {
+                increaseHealth(50);
+                target.increaseHealth(-attackPower);
+            }
+            else {
+                moveTo(target.getPosition());
+            }
+        }
     }
 }

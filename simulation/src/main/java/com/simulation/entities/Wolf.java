@@ -2,7 +2,7 @@ package com.simulation.entities;
 
 public class Wolf extends Predator {
 
-    protected Wolf(Position position) {
+    public Wolf(Position position) {
         super(position, 2, 20);
     }
 }
